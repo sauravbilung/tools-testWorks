@@ -9,7 +9,7 @@
 plugins {
     // war plugin extends java tasks 
     id 'war'
-    // We can take the waar file deploy it to tomcat or any application server
+    // We can take the war file and deploy it to tomcat or any application server
     // but here we have used gretty plugin. This is a gradle plugin for running web-apps on jetty and tomcat.
     id 'org.gretty' version '3.0.3'
 }
@@ -22,7 +22,9 @@ repositories {
 
 dependencies {
    // provideCompile means the jar will not make it to the war file.
+   // groupID:artifactId:version
    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 }
 
+// Default is 8080
 gretty.httpPort=9090

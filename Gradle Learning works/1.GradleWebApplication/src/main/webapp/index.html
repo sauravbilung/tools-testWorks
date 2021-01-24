@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<!-- This link is a get request to CoupanServlet class and will be handled by doGet method-->
+	<a href="coupon">Get Coupon</a> <!--href=coupan is the name of servlet-->
+	<form method="post" action="coupon">
+		<!--action=coupan is again the servlet name to which the request is submitted-->
+		<!--Since it is a post request so it will be handled by doPost method in CoupanServlet class-->
+		Coupon Code:<input type="text" name="coupon"> <!--name=coupan is html element identifier name-->
+		<input type="submit" value="Get Discount">
+	</form>
+</body>
+</html>
