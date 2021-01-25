@@ -43,3 +43,23 @@ application {
 */
 
 }
+
+project(':web'){
+    dependencies{
+        implementation project(':services')
+    }
+}
+
+// services dependency on data module is configured in the build.gradle file of services module.
+// It can be configured from here as well.
+/*project(':services'){
+    dependencies{
+        implementation project(':data')
+    }
+}*/
+
+project(':data'){
+    dependencies{
+        implementation project(':integration')
+    }
+}
