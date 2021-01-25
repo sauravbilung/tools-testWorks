@@ -1,0 +1,45 @@
+allprojects{
+// This "allprojects" will make this task available for all the subprojects.
+task printProjectName{
+    doLast(){
+        println project.name
+    }
+}
+}
+
+subprojects{
+// This "subprojects" will make this task available for all the subprojects and not for
+// root project. "gradle printSubProjectName" will also run from root folder though but will
+// not run for root project. It will be running only for subprojects.
+task printSubProjectName{
+    doLast(){
+        println project.name
+    }
+}
+
+// From Below the same thing is available in subprojects as well. But they are not needed there. They can be empty
+// From here below will be available to all the subprojects.
+// Applying plugins to sub project is different from root's build.gradle file. This is the only change in the root project.
+apply plugin: 'java' // comment above and use this
+
+// below 2 properties are not present in the subprojects but still will be applied to them from here.
+version ='1.0'
+group='com.sb.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
+
+/*
+//Comment because we won't be running this project on its own.
+application {
+    // Define the main class for the application.
+    mainClassName = 'com.sb.gradle.App'
+}
+*/
+
+}

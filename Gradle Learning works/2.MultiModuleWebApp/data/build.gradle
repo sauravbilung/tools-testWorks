@@ -1,0 +1,5 @@
+
+// This is made empty because it will get the configurations from the root project. The configurations
+// are mentioned there in the "subprojects" section in the build.gradle file. Services and integration 
+// projects have their configurations in place in the build.gradle file. It is kept empty just to show 
+// that it will still work.

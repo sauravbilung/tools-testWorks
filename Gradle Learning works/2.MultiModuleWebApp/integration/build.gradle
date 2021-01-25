@@ -1,0 +1,21 @@
+plugins {
+   id 'java'
+   // Apply the application plugin to add support for building a CLI application.
+   // id 'application' //because we won't be running this project on its own.
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
+
+/*
+//Comment becuase we won't be running this project on its own.
+application {
+    // Define the main class for the application.
+    mainClassName = 'com.sb.gradle.App'
+}
+*/

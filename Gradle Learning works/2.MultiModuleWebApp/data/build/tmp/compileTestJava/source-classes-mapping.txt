@@ -1,0 +1,2 @@
+com/sb/gradle/AppTest.java
+ com.sb.gradle.AppTest

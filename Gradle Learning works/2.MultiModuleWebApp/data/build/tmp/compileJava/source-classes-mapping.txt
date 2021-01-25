@@ -1,0 +1,2 @@
+com/sb/gradle/App.java
+ com.sb.gradle.App
