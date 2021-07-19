@@ -1,1 +1,1 @@
-<b>All the learning work goes here.</b>
+<b>Workspace for testing out some tools and libraries. Import the project in the respective IDEs.</b>
