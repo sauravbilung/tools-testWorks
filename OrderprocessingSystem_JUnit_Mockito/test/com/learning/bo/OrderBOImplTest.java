@@ -101,7 +101,7 @@ public class OrderBOImplTest {
 	public void cancelOrder_Should_Throw_BO_Exception_On_Read() throws SQLException, BOException {
 
 		when(dao.read(123)).thenThrow(SQLException.class);
-		bo.cancelOrder(123);
+		boolean result=bo.cancelOrder(123);
 
 	}
 
@@ -110,7 +110,28 @@ public class OrderBOImplTest {
 		Order order = new Order();
 		when(dao.read(123)).thenReturn(order);
 		when(dao.update(order)).thenThrow(SQLException.class);
-		bo.cancelOrder(123);
+		boolean result=bo.cancelOrder(123);
 	}
 
+	@Test
+	public void deleteOrder_Deletes_The_Order() throws SQLException, BOException {
+		when(dao.delete(123)).thenReturn(1);
+		boolean result=bo.deleteOrder(123);
+		assertTrue(result);
+		verify(dao).delete(123);
+	}
+	
+	@Test
+	public void deleteOrder_Should_Not_Delete_The_Order() throws SQLException, BOException {
+		when(dao.delete(123)).thenReturn(0);
+		boolean result=bo.deleteOrder(123);
+		assertFalse(result);
+		verify(dao).delete(123);
+	}
+	
+	@Test(expected=BOException.class)
+	public void deleteOrder_Should_Throw_BO_Exception() throws SQLException, BOException {
+		when(dao.delete(123)).thenThrow(SQLException.class);
+		boolean result=bo.deleteOrder(123);
+	}
 }
