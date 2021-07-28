@@ -2,6 +2,7 @@
 # To run the script "bash scriptName.sh"
 # Or make it executable chmod +x scriptName.sh then ./scriptName.sh
 
+# Remove objects(files) from S3 which contains some specific substring in the object name.
 listObjects=$(aws s3api list-objects --bucket sbilung --no-paginate --query Contents[].Key)
 
 deleteObject () {
